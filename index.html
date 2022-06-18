@@ -130,6 +130,17 @@ pre span {
   width: 50%;
 }
 
+h6 {
+    color: #ee856b;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 @media only screen and (max-width: 768px) {
   .slideSample {
     width: 80%;
@@ -164,9 +175,26 @@ pre span {
 
           <p>Below are some Amazon-Tagged Leetcode questions for you to familiarize yourself with. Happy coding!</p>
 
+          <hr>
+          <h6>&bull; Array & Map</h6>
           <p class="text-center text-muted"><a href="https://leetcode.com/problems/reorder-data-in-log-files/" target="_blank">https://leetcode.com/problems/reorder-data-in-log-files/</a></p>
 <pre>
-
+class Solution:
+  def reorderLogFiles(self, logs: List[str]) -> List[str]:
+      letter = []
+      digit = []
+      
+      for log in logs:
+          idf, content = log.split(" ", 1)
+          
+          if content[0].isdigit():
+              digit.append(log)
+          else:
+              letter.append(log)
+              
+      letter.sort(key = lambda x: (x.split(" ", 1)[1], x.split(" ", 1)[0]))
+      
+      return letter + digit
 </pre>
 
 </div>
