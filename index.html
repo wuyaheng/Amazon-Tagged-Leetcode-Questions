@@ -250,6 +250,34 @@ class Solution:
       return profit
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/roman-to-integer/" target="_blank">https://leetcode.com/problems/roman-to-integer/</a></p>
+<pre> 
+class Solution:
+  def romanToInt(self, s: str) -> int:
+      lookup = {
+          "I": 1,
+          "V": 5,
+          "X": 10,
+          "L": 50,
+          "C": 100,
+          "D": 500,
+          "M": 1000 
+      }
+      
+      ans = 0
+      n = len(s)
+      maxN = 0
+      
+      for i in range(n - 1, -1, -1):
+          if lookup[s[i]] >= maxN:
+              ans += lookup[s[i]]
+              maxN = lookup[s[i]]
+          else:
+              ans -= lookup[s[i]]
+              
+      return ans
+</pre>
+
 <hr>
 <h6>&bull; Stack</h6>
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/valid-parentheses/" target="_blank">https://leetcode.com/problems/valid-parentheses/</a></p>
