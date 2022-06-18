@@ -236,6 +236,20 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/" target="_blank">https://leetcode.com/problems/best-time-to-buy-and-sell-stock/</a></p>
+<pre>
+class Solution:
+  def maxProfit(self, prices: List[int]) -> int:
+      profit = 0
+      buy = prices[0]
+      
+      for price in prices:
+          buy = min(buy, price)
+          profit = max(profit, price - buy)
+          
+      return profit
+</pre>
+
 </div>
       </div>
     </div>
