@@ -173,7 +173,7 @@ hr {
 
           <p>Most importantly, we should never memorize the code, but, rather, we should be able to identify patterns that can help us solve all similar problems.</p>
 
-          <p>Below are some Amazon-Tagged Leetcode questions for you to familiarize yourself with. Happy coding!</p>
+          <p>Below are some Amazon-Tagged Leetcode questions for you to familiarize yourself with. Happy coding! :-)</p>
 
           <hr>
           <h6>&bull; Array & Map</h6>
@@ -210,6 +210,30 @@ class Solution:
               return [lookup[otherNum], i]
       
           lookup[nums[i]] = i
+</pre>
+
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/most-common-word/" target="_blank">https://leetcode.com/problems/most-common-word/</a></p>
+<pre>
+class Solution:
+  def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
+      lookup = {}
+      cnt = 0
+      ans = ""
+      
+      ban = set(banned)      
+      para = paragraph.lower().replace("!", " ").replace("?", " ").replace(","," ").replace(".", " ").replace(";", " ").replace("'", " ")
+      
+      for word in para.split():
+          if word == " " or word in ban:
+              continue
+              
+          lookup[word] = lookup.get(word, 0) + 1
+          
+          if lookup[word] > cnt:
+              cnt = lookup[word]
+              ans = word
+              
+      return ans
 </pre>
 
 </div>
