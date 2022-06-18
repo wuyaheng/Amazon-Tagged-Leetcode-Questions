@@ -197,6 +197,21 @@ class Solution:
       return letter + digit
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/two-sum/" target="_blank">https://leetcode.com/problems/two-sum/</a></p>
+<pre>
+class Solution:
+  def twoSum(self, nums: List[int], target: int) -> List[int]:
+      lookup = {}
+      
+      for i in range(len(nums)):
+          otherNum = target - nums[i]
+          
+          if otherNum in lookup:
+              return [lookup[otherNum], i]
+      
+          lookup[nums[i]] = i
+</pre>
+
 </div>
       </div>
     </div>
