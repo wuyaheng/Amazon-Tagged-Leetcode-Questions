@@ -278,6 +278,23 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/maximum-subarray/" target="_blank">https://leetcode.com/problems/maximum-subarray/</a></p>
+<pre> 
+class Solution:
+  def maxSubArray(self, nums: List[int]) -> int:
+      curSum = 0
+      ans = float("-inf")
+      
+      for num in nums:
+          if curSum < 0:
+              curSum = num
+          else:
+              curSum += num
+              ans = max(ans, curSum)
+      
+      return ans
+</pre>
+
 <hr>
 <h6>&bull; Stack</h6>
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/valid-parentheses/" target="_blank">https://leetcode.com/problems/valid-parentheses/</a></p>
