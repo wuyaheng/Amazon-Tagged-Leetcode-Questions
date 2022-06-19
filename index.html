@@ -321,6 +321,31 @@ class Solution:
       return len(stack) == 0
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/min-stack/" target="_blank">https://leetcode.com/problems/min-stack/</a></p>
+<pre>
+class MinStack:
+
+  def __init__(self):
+      self.stack = []
+      self.minStack = []
+
+  def push(self, val: int) -> None:
+      self.stack.append(val)
+      if len(self.minStack) == 0 or val <= self.minStack[-1]:
+          self.minStack.append(val)
+
+  def pop(self) -> None:
+      k = self.stack.pop()
+      if self.minStack[-1] == k:
+          self.minStack.pop()        
+
+  def top(self) -> int:
+      return self.stack[-1]
+
+  def getMin(self) -> int:
+      return self.minStack[-1]
+</pre>
+
 <hr>
 <h6>&bull; Linked List</h6>
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank">https://leetcode.com/problems/merge-two-sorted-lists/</a></p>
