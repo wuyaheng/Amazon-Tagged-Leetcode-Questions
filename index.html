@@ -431,6 +431,30 @@ class Solution:
       return (root.left != None and self.isSubtree(root.left, subRoot)) or (root.right != None and self.isSubtree(root.right, subRoot))
 </pre>
 
+<hr>
+<h6>&bull; Matrix</h6>
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/flood-fill/" target="_blank">https://leetcode.com/problems/flood-fill/</a></p>
+<pre>
+class Solution:
+  def floodFill(self, image: List[List[int]], sr: int, sc: int, newColor: int) -> List[List[int]]:
+      self.directions = [[-1, 0], [1, 0], [0, -1], [0, 1]]
+      
+      def dfs(image, i, j, newColor, oldColor):
+          image[i][j] = newColor
+          
+          for d in self.directions:
+              ni = i + d[0]
+              nj = j + d[1]
+              
+              if ni >= 0 and nj >= 0 and ni < len(image) and nj < len(image[0]) and image[ni][nj] == oldColor:
+                  dfs(image, ni, nj, newColor, oldColor)
+                  
+      if image[sr][sc] != newColor:
+          dfs(image, sr, sc, newColor, image[sr][sc])
+      
+      return image
+</pre>
+
 </div>
       </div>
     </div>
