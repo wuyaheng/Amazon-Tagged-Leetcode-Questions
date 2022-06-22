@@ -410,6 +410,23 @@ class MinStack:
 
 <hr>
 <h6>&bull; Linked List</h6>
+
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/reverse-linked-list/" target="_blank">https://leetcode.com/problems/reverse-linked-list/</a></p>
+<pre>
+class Solution:
+  def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+      pre = None
+      cur = head
+      
+      while cur:
+          nxt = cur.next
+          cur.next = pre
+          pre = cur
+          cur = nxt
+      
+      return pre
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank">https://leetcode.com/problems/merge-two-sorted-lists/</a></p>
 <pre>
 class Solution:
