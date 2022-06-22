@@ -431,6 +431,19 @@ class Solution:
       return (root.left != None and self.isSubtree(root.left, subRoot)) or (root.right != None and self.isSubtree(root.right, subRoot))
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/symmetric-tree/" target="_blank">https://leetcode.com/problems/symmetric-tree/</a></p>
+<pre>
+class Solution:
+  def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+      if root is None:
+          return True
+        
+      def symmetric(a, b):
+          return (a is None and b is None) or (a != None and b != None and a.val == b.val and symmetric(a.left, b.right) and symmetric(a.right, b.left))
+        
+      return symmetric(root.left, root.right)
+</pre>
+
 <hr>
 <h6>&bull; Matrix</h6>
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/flood-fill/" target="_blank">https://leetcode.com/problems/flood-fill/</a></p>
