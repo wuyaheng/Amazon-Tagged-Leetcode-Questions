@@ -212,6 +212,18 @@ class Solution:
           lookup[nums[i]] = i
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/majority-element/" target="_blank">https://leetcode.com/problems/majority-element/</a></p>
+<pre>
+class Solution:
+  def majorityElement(self, nums: List[int]) -> int:
+      lookup = {}
+      
+      for num in nums:
+          lookup[num] = lookup.get(num, 0) + 1
+          if lookup[num] > len(nums) / 2:
+              return num
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/merge-sorted-array/" target="_blank">https://leetcode.com/problems/merge-sorted-array/</a></p>
 <pre>
 class Solution:
