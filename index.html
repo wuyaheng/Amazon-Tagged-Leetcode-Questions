@@ -473,6 +473,38 @@ class Solution:
       return prehead.next
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/palindrome-linked-list/" target="_blank">https://leetcode.com/problems/palindrome-linked-list/</a></p>
+<pre>
+class Solution:
+  def isPalindrome(self, head: Optional[ListNode]) -> bool:      
+      if head == None or head.next == None:
+          return True
+      
+      prev = None
+      slow = head
+      fast = head
+      while fast != None and fast.next != None:
+          fast = fast.next.next
+          prev = slow
+          slow = slow.next   
+      prev.next = None
+      
+      pre = None
+      cur = slow
+      while cur:
+          nxt = cur.next
+          cur.next = pre
+          pre = cur
+          cur = nxt
+      
+      while head != None and pre != None:
+          if head.val  != pre.val:
+              return False
+          head = head.next
+          pre = pre.next
+      return True
+</pre>
+
 <hr>
 <h6>&bull; Tree</h6>
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/subtree-of-another-tree/" target="_blank">https://leetcode.com/problems/subtree-of-another-tree/</a></p>
