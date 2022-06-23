@@ -554,6 +554,27 @@ class Solution:
       return (root.left != None and self.isSubtree(root.left, subRoot)) or (root.right != None and self.isSubtree(root.right, subRoot))
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/diameter-of-binary-tree/" target="_blank">https://leetcode.com/problems/diameter-of-binary-tree/</a></p>
+<pre>
+class Solution:
+  def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+      self.ans = 0
+      
+      def dfs(node):
+          if node == None:
+              return 0
+          
+          l = dfs(node.left)
+          r = dfs(node.right)
+          
+          self.ans = max(l + r, self.ans)
+          
+          return max(l, r) + 1
+      
+      dfs(root)
+      return self.ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/symmetric-tree/" target="_blank">https://leetcode.com/problems/symmetric-tree/</a></p>
 <pre>
 class Solution:
