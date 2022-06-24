@@ -737,6 +737,28 @@ class Solution:
 </pre>
 
 <hr>
+<h6>&bull; Heap</h6>
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/kth-largest-element-in-a-stream/" target="_blank">https://leetcode.com/problems/kth-largest-element-in-a-stream/</a></p>
+<pre>
+class KthLargest:
+
+  def __init__(self, k: int, nums: List[int]):
+      self.pq = []
+      self.k = k
+      
+      for num in nums:
+          self.add(num)    
+
+  def add(self, val: int) -> int:
+      heapq.heappush(self.pq, val)
+      
+      if len(self.pq) > self.k:
+          heapq.heappop(self.pq)
+          
+      return self.pq[0]
+</pre>
+
+<hr>
 <h6>&bull; Matrix</h6>
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/flood-fill/" target="_blank">https://leetcode.com/problems/flood-fill/</a></p>
 <pre>
