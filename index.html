@@ -511,6 +511,28 @@ class Solution:
       return len(stack) == 0
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/next-greater-element-i/" target="_blank">https://leetcode.com/problems/next-greater-element-i/</a></p>
+<pre>
+class Solution:
+  def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+      lookup = {}
+      stack = []
+      ans = []
+      
+      for i in range(len(nums2)):
+          while len(stack) > 0 and stack[-1] < nums2[i]:
+              lookup[stack.pop()] = nums2[i] 
+          stack.append(nums2[i])
+          
+      for num in nums1:
+          if num in lookup:
+              ans.append(lookup[num])
+          else:
+              ans.append(-1)
+      
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/min-stack/" target="_blank">https://leetcode.com/problems/min-stack/</a></p>
 <pre>
 class MinStack:
