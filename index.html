@@ -670,6 +670,20 @@ class Solution:
       return pre
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/intersection-of-two-linked-lists/" target="_blank">https://leetcode.com/problems/intersection-of-two-linked-lists/</a></p>
+<pre>
+class Solution:
+  def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
+      a = headA
+      b = headB
+      
+      while a != b:
+          a = headB if a == None else a.next
+          b = headA if b == None else b.next
+  
+      return a
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank">https://leetcode.com/problems/merge-two-sorted-lists/</a></p>
 <pre>
 class Solution:
