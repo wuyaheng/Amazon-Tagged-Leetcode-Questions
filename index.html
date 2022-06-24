@@ -197,6 +197,20 @@ class Solution:
       return letter + digit
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/contains-duplicate/" target="_blank">https://leetcode.com/problems/contains-duplicate/</a></p>
+<pre>
+class Solution:
+  def containsDuplicate(self, nums: List[int]) -> bool:
+      lookup = {}
+      
+      for num in nums:
+          lookup[num] = lookup.get(num, 0) + 1
+          if lookup[num] == 2:
+              return True
+      
+      return False
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/two-sum/" target="_blank">https://leetcode.com/problems/two-sum/</a></p>
 <pre>
 class Solution:
