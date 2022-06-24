@@ -211,6 +211,22 @@ class Solution:
       return False
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/isomorphic-strings/" target="_blank">https://leetcode.com/problems/isomorphic-strings/</a></p>
+<pre>
+class Solution:
+  def isIsomorphic(self, s: str, t: str) -> bool:
+      lookup = {}
+      tSet = set()
+      
+      for i in range(len(s)):
+          if (s[i] in lookup and lookup[s[i]] != t[i]) or (s[i] not in lookup and t[i] in tSet):
+              return False
+          lookup[s[i]] = t[i] 
+          tSet.add(t[i])
+      
+      return True
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/two-sum/" target="_blank">https://leetcode.com/problems/two-sum/</a></p>
 <pre>
 class Solution:
