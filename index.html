@@ -622,6 +622,25 @@ class Solution:
 </pre>
 
 <hr>
+<h6>&bull; Queue</h6>
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/moving-average-from-data-stream/" target="_blank">https://leetcode.com/problems/moving-average-from-data-stream/</a></p>
+<pre>
+class MovingAverage:
+  def __init__(self, size: int):
+      self.q = deque()
+      self.size = size
+
+  def next(self, val: int) -> float:
+      if len(self.q) < self.size:
+          self.q.append(val)
+      else:
+          self.q.popleft()
+          self.q.append(val)
+          
+      return sum(self.q)/len(self.q)
+</pre>
+
+<hr>
 <h6>&bull; Stack</h6>
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/valid-parentheses/" target="_blank">https://leetcode.com/problems/valid-parentheses/</a></p>
 <pre>
