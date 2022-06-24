@@ -647,6 +647,29 @@ class Solution:
       return len(stack) == 0
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/baseball-game/" target="_blank">https://leetcode.com/problems/baseball-game/</a></p>
+<pre>
+class Solution:
+  def calPoints(self, ops: List[str]) -> int:
+      stack = []
+      ans = 0
+      
+      for i in range(len(ops)):
+          if ops[i] == "C":
+              stack.pop()
+          elif ops[i] == "D":
+              stack.append(stack[-1] * 2)
+          elif ops[i] == "+":
+              stack.append(stack[-1] + stack[-2])
+          else:
+              stack.append(int(ops[i]))
+              
+      for num in stack:
+          ans += num
+          
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/next-greater-element-i/" target="_blank">https://leetcode.com/problems/next-greater-element-i/</a></p>
 <pre>
 class Solution:
