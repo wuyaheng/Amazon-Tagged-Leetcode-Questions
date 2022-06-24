@@ -681,6 +681,23 @@ class Solution:
       return pre
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/" target="_blank">https://leetcode.com/problems/remove-duplicates-from-sorted-list/</a></p>
+<pre>
+class Solution:
+  def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+      if head is None:
+          return head
+      
+      cur = head
+      while cur.next:
+          if cur.val == cur.next.val:
+              cur.next = cur.next.next
+          else:
+              cur = cur.next
+      
+      return head
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/intersection-of-two-linked-lists/" target="_blank">https://leetcode.com/problems/intersection-of-two-linked-lists/</a></p>
 <pre>
 class Solution:
