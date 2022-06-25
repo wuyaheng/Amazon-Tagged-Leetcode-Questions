@@ -738,6 +738,36 @@ class Solution:
       return ans[::-1]
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/add-strings/" target="_blank">https://leetcode.com/problems/add-strings/</a></p>
+<pre>
+class Solution:
+  def addStrings(self, num1: str, num2: str) -> str:
+      n = len(num1) - 1
+      m = len(num2) - 1
+      
+      carry = 0
+      val = 0
+      ans = ""
+      
+      while n >= 0 or m >= 0:
+          val = carry
+          if n >= 0:
+              val += int(num1[n])
+              n -= 1
+              
+          if m >= 0:
+              val += int(num2[m])
+              m -= 1
+              
+          ans += str(val % 10)
+          carry = val // 10
+       
+      if carry > 0:
+          ans += str(carry)
+          
+      return ans[::-1]
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/happy-number/" target="_blank">https://leetcode.com/problems/happy-number/</a></p>
 <pre>
 class Solution:
