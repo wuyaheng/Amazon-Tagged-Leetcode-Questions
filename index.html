@@ -324,6 +324,25 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/intersection-of-two-arrays-ii/" target="_blank">https://leetcode.com/problems/intersection-of-two-arrays-ii/</a></p>
+<pre>
+class Solution:
+  def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+      ans = []
+      
+      lookup = {}
+      
+      for num in nums1:
+          lookup[num] = lookup.get(num, 0) + 1
+          
+      for num in nums2:
+          if num in lookup and lookup[num] != 0:
+              lookup[num] -= 1
+              ans.append(num)
+              
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/majority-element/" target="_blank">https://leetcode.com/problems/majority-element/</a></p>
 <pre>
 class Solution:
