@@ -707,6 +707,18 @@ class Solution:
       return x == y
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/maximum-product-of-three-numbers/" target="_blank">https://leetcode.com/problems/maximum-product-of-three-numbers/</a></p>
+<pre>
+class Solution:
+  def maximumProduct(self, nums: List[int]) -> int:
+      ans = 0
+      nums.sort()
+      n = len(nums) - 1
+      
+      ans = max((nums[n - 2] * nums[n - 1] * nums[n]), (nums[0] * nums[1] * nums[-1]))
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/plus-one/" target="_blank">https://leetcode.com/problems/plus-one/</a></p>
 <pre>
 class Solution:
