@@ -1079,6 +1079,41 @@ class Solution:
       return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/cousins-in-binary-tree/" target="_blank">https://leetcode.com/problems/cousins-in-binary-tree/</a></p>
+<pre>
+class Solution:
+  def isCousins(self, root: Optional[TreeNode], x: int, y: int) -> bool:
+      self.parx = None
+      self.pary = None
+      self.depx = 0
+      self.depy = 0
+      
+      if root.val == x or root.val == y:
+          return False
+
+      def dfs(root, par, target, dep):
+          if root is None:
+              return
+          
+          if root.val == target:
+              if target == x:
+                  self.parx = par
+                  self.depx = dep
+              else:
+                  self.pary = par
+                  self.depy = dep
+                  
+              return
+      
+          dfs(root.left, root, target, dep + 1)
+          dfs(root.right, root, target, dep + 1)
+      
+      dfs(root, -1, x, 0)
+      dfs(root, -1, y, 0)
+      
+      return self.parx != self.pary and self.depx == self.depy
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/" target="_blank">https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/</a></p>
 <pre>
 class Solution:
