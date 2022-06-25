@@ -731,6 +731,36 @@ class Solution:
       return t    
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/add-binary/" target="_blank">https://leetcode.com/problems/add-binary/</a></p>
+<pre>
+class Solution:
+  def addBinary(self, a: str, b: str) -> str:
+      m = len(a) - 1
+      n = len(b) - 1
+      ans = ""
+      val = 0
+      carry = 0
+      
+      while m >= 0 or n >= 0:
+          val = carry
+          
+          if m >= 0:
+              val += int(a[m]) 
+              m -= 1
+              
+          if n >= 0:
+              val += int(b[n])
+              n -= 1
+          
+          ans += str(val % 2)
+          carry = val // 2
+          
+      if carry != 0:
+          ans += str(carry)
+      
+      return ans[::-1]
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/single-number/" target="_blank">https://leetcode.com/problems/single-number/</a></p>
 <pre>
 class Solution:
