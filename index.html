@@ -635,6 +635,24 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/first-bad-version/" target="_blank">https://leetcode.com/problems/first-bad-version/</a></p>
+<pre>
+class Solution:
+  def firstBadVersion(self, n: int) -> int:
+      l = 1
+      r = n
+      
+      while l < r:
+          mid = (l + r) // 2
+          
+          if isBadVersion(mid):
+              r = mid
+          else:
+              l = mid + 1
+              
+      return l
+</pre>
+
 <hr>
 <h6>&bull; Two Pointers</h6>
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/valid-palindrome/" target="_blank">https://leetcode.com/problems/valid-palindrome/</a></p>
@@ -1107,6 +1125,24 @@ class Solution:
           return False
 
       return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+</pre>
+
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/range-sum-of-bst/" target="_blank">https://leetcode.com/problems/range-sum-of-bst/</a></p>
+<pre>
+class Solution:
+  def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
+
+      if not root:
+          return 0
+      
+      if root.val > high:
+          return self.rangeSumBST(root.left, low, high)
+      
+      if root.val < low:
+          return self.rangeSumBST(root.right, low, high)
+      
+      return root.val + self.rangeSumBST(root.left, low, high) + self.rangeSumBST(root.right, low, high)
+
 </pre>
 
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/merge-two-binary-trees/" target="_blank">https://leetcode.com/problems/merge-two-binary-trees/</a></p>
