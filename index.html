@@ -593,6 +593,32 @@ class Solution:
       return x == y
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/happy-number/" target="_blank">https://leetcode.com/problems/happy-number/</a></p>
+<pre>
+class Solution:
+  def isHappy(self, n: int) -> bool:
+      
+      def cal(n):
+          ans = 0
+          while n > 0:
+              ans += (n % 10) * (n % 10)
+              n = n // 10
+          return ans
+      
+      s = n 
+      f = n
+      
+      while f != 1 and cal(f) != 1:
+          s = cal(s)
+          f = cal(cal(f))
+          
+          if s == f:
+              return False
+      return True
+         
+      return cal(n)
+</pre>
+
 <hr>
 <h6>&bull; Bit Manipulation</h6>
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/missing-number/" target="_blank">https://leetcode.com/problems/missing-number/</a></p>
