@@ -1170,6 +1170,24 @@ class Solution:
       return dp[n]
 </pre>
 
+<hr>
+<h6>&bull; Design</h6>
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/design-parking-system/" target="_blank">https://leetcode.com/problems/design-parking-system/</a></p>
+<pre>
+class ParkingSystem:
+  def __init__(self, big: int, medium: int, small: int):
+      self.slots = [0] * 3
+      self.slots[0] = big
+      self.slots[1] = medium
+      self.slots[2] = small
+
+  def addCar(self, carType: int) -> bool:
+      if self.slots[carType - 1] > 0:
+          self.slots[carType - 1] -= 1
+          return True
+      return False
+</pre>
+
 </div>
       </div>
     </div>
