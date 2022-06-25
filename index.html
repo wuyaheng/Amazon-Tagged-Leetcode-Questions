@@ -211,6 +211,24 @@ class Solution:
       return False
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/" target="_blank">https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/</a></p>
+<pre>
+class Solution:
+  def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+      ans = []
+      lookup = {}
+      n = len(nums)
+           
+      for num in nums:
+          lookup[num] = lookup.get(num, 0) + 1 
+      
+      for i in range(1, n + 1):
+          if i not in lookup:
+              ans.append(i)
+              
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/meeting-rooms/" target="_blank">https://leetcode.com/problems/meeting-rooms/</a></p>
 <pre>
 class Solution:
