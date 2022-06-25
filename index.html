@@ -633,6 +633,25 @@ class Solution:
       return x == y
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/plus-one/" target="_blank">https://leetcode.com/problems/plus-one/</a></p>
+<pre>
+class Solution:
+  def plusOne(self, digits: List[int]) -> List[int]:
+      n = len(digits)
+      ans = []
+      carry = 0
+      for i in range(n - 1, -1, -1):
+          cur = carry + digits[i] + (1 if i == n - 1 else 0)
+          
+          ans.append(cur % 10)
+          carry = cur // 10
+      
+      if carry > 0:
+          ans.append(1)
+          
+      return ans[::-1]
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/happy-number/" target="_blank">https://leetcode.com/problems/happy-number/</a></p>
 <pre>
 class Solution:
