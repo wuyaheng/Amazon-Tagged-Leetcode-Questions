@@ -646,6 +646,24 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/search-insert-position/" target="_blank">https://leetcode.com/problems/search-insert-position/</a></p>
+<pre>
+class Solution:
+  def searchInsert(self, nums: List[int], target: int) -> int:
+      l = 0
+      r = len(nums)
+      
+      while l < r:
+          mid = (l + r) // 2
+          
+          if nums[mid] >= target:
+              r = mid
+          else:
+              l = mid + 1
+              
+      return l
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/peak-index-in-a-mountain-array/" target="_blank">https://leetcode.com/problems/peak-index-in-a-mountain-array/</a></p>
 <pre>
 class Solution:
