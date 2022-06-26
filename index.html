@@ -1348,6 +1348,23 @@ class KthLargest:
       return self.pq[0]
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/last-stone-weight/" target="_blank">https://leetcode.com/problems/last-stone-weight/</a></p>
+<pre>
+class Solution:
+  def lastStoneWeight(self, stones: List[int]) -> int:
+      stones = [-x for x in stones]
+      heapq.heapify(stones)
+      
+      while len(stones) > 1:
+          first =  -1 * heapq.heappop(stones)
+          second = -1 * heapq.heappop(stones)
+          
+          if first != second:
+              heapq.heappush(stones, -1 *(first - second))
+              
+      return 0 if len(stones) == 0 else -1 * stones[0]    
+</pre>
+
 <hr>
 <h6>&bull; Matrix</h6>
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/flood-fill/" target="_blank">https://leetcode.com/problems/flood-fill/</a></p>
