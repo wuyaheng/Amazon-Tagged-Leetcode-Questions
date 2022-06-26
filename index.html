@@ -646,6 +646,24 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/peak-index-in-a-mountain-array/" target="_blank">https://leetcode.com/problems/peak-index-in-a-mountain-array/</a></p>
+<pre>
+class Solution:
+  def peakIndexInMountainArray(self, arr: List[int]) -> int:
+      l = 0
+      r = len(arr) - 1
+      
+      while l < r:
+          mid = (l + r) // 2
+          
+          if arr[mid] > arr[mid + 1]:
+              r = mid          
+          else:
+              l = mid + 1
+              
+      return l
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/binary-search/" target="_blank">https://leetcode.com/problems/binary-search/</a></p>
 <pre>
 class Solution:
