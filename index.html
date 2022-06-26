@@ -1081,6 +1081,20 @@ class Solution:
       return pre
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/middle-of-the-linked-list/" target="_blank">https://leetcode.com/problems/middle-of-the-linked-list/</a></p>
+<pre>
+class Solution:
+  def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+      slow = head
+      fast = head
+      
+      while fast and fast.next:
+          fast = fast.next.next
+          slow = slow.next
+
+      return slow
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/delete-node-in-a-linked-list/" target="_blank">https://leetcode.com/problems/delete-node-in-a-linked-list/</a></p>
 <pre>
 class Solution:
