@@ -1455,6 +1455,31 @@ class Solution:
       return image
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/island-perimeter/" target="_blank">https://leetcode.com/problems/island-perimeter/</a></p>
+<pre>
+class Solution:
+  def islandPerimeter(self, grid: List[List[int]]) -> int:
+      ans = 0
+      m = len(grid)
+      n = len(grid[0])
+      
+      for i in range(m):
+          for j in range(n):
+              if grid[i][j] == 1:
+                  ans += 4
+              
+                  if i + 1 < m and grid[i + 1][j] == 1:
+                      ans -= 1
+                  if j + 1 < n and grid[i][j + 1] == 1:
+                      ans -= 1
+                  if i - 1 >= 0 and grid[i - 1][j] == 1:
+                      ans -= 1
+                  if j - 1 >= 0 and grid[i][j - 1] == 1:
+                      ans -= 1
+                  
+      return ans
+</pre>
+
 <hr>
 <h6>&bull; Graph</h6>
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/find-the-town-judge/" target="_blank">https://leetcode.com/problems/find-the-town-judge/</a></p>
