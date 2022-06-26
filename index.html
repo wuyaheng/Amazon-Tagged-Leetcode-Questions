@@ -646,6 +646,24 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/binary-search/" target="_blank">https://leetcode.com/problems/binary-search/</a></p>
+<pre>
+class Solution:
+  def search(self, nums: List[int], target: int) -> int:
+      l = 0
+      r = len(nums)
+      
+      while l < r:
+          mid = (l + r) // 2
+          
+          if nums[mid] >= target:
+              r = mid
+          else:
+              l = mid + 1
+          
+      return -1 if l == len(nums) or nums[l] != target else l
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/first-bad-version/" target="_blank">https://leetcode.com/problems/first-bad-version/</a></p>
 <pre>
 class Solution:
