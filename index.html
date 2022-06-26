@@ -725,6 +725,16 @@ class Solution:
       return x == y
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/rectangle-overlap/" target="_blank">https://leetcode.com/problems/rectangle-overlap/</a></p>
+<pre>
+class Solution:
+  def isRectangleOverlap(self, rec1: List[int], rec2: List[int]) -> bool:
+      a1, b1, a2, b2 = rec1[0], rec1[1], rec1[2], rec1[3]
+      x1, y1, x2, y2 = rec2[0], rec2[1], rec2[2], rec2[3]
+      
+      return not (a2 <= x1 or x2 <= a1 or b2 <= y1 or y2 <= b1)
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/maximum-product-of-three-numbers/" target="_blank">https://leetcode.com/problems/maximum-product-of-three-numbers/</a></p>
 <pre>
 class Solution:
