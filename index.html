@@ -1576,6 +1576,33 @@ class ParkingSystem:
       return False
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/max-stack/" target="_blank">https://leetcode.com/problems/max-stack/</a></p>
+<pre>
+class MaxStack:
+  def __init__(self):
+      self.maxStack = []
+
+  def push(self, x: int) -> None:
+      self.maxStack.append(x)
+
+  def pop(self) -> int:
+      return self.maxStack.pop()
+
+  def top(self) -> int:
+      return self.maxStack[-1]
+
+  def peekMax(self) -> int:
+      return max(self.maxStack)
+
+  def popMax(self) -> int:
+      max_val = self.peekMax()
+      t = float("-inf")
+      for i in range(len(self.maxStack) - 1, -1, -1):
+          if self.maxStack[i] == max_val:
+              t = self.maxStack.pop(i)
+              return t
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/implement-queue-using-stacks/" target="_blank">https://leetcode.com/problems/implement-queue-using-stacks/</a></p>
 <pre>
 class MyQueue:
