@@ -212,6 +212,25 @@ class Solution:
       return ans + 1 if ans < len(s) else ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/shortest-word-distance/" target="_blank">https://leetcode.com/problems/shortest-word-distance/</a></p>
+<pre>
+class Solution:
+  def shortestDistance(self, wordsDict: List[str], word1: str, word2: str) -> int:
+      p1 = -1
+      p2 = -1
+      ans = float("inf")
+      
+      for i in range(len(wordsDict)):
+          if wordsDict[i] == word1:
+              p1 = i
+          elif wordsDict[i] == word2:
+              p2 = i
+          if p1 != -1 and p2 != -1:
+              ans = min(ans, abs(p2 - p1))
+      
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/running-sum-of-1d-array/" target="_blank">https://leetcode.com/problems/running-sum-of-1d-array/</a></p>
 <pre>
 class Solution:
