@@ -1159,6 +1159,21 @@ class Solution:
       return stack_s == stack_t
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/" target="_blank">https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/</a></p>
+<pre>
+class Solution:
+  def removeDuplicates(self, s: str) -> str:
+      stack = []
+      
+      for i in range(len(s)):
+          if len(stack) > 0 and stack[-1] == s[i]:
+              stack.pop()
+          else:
+              stack.append(s[i])
+          
+      return "".join(stack)
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/baseball-game/" target="_blank">https://leetcode.com/problems/baseball-game/</a></p>
 <pre>
 class Solution:
