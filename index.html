@@ -1819,6 +1819,20 @@ class ParkingSystem:
       return False
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/logger-rate-limiter/" target="_blank">https://leetcode.com/problems/logger-rate-limiter/</a></p>
+<pre>
+class Logger:
+  def __init__(self):
+      self.lookup = {}
+
+  def shouldPrintMessage(self, timestamp: int, message: str) -> bool:
+      if message not in self.lookup or timestamp - self.lookup[message] >= 10:
+          self.lookup[message] = timestamp
+          return True
+      
+      return False
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/implement-stack-using-queues/" target="_blank">https://leetcode.com/problems/implement-stack-using-queues/</a></p>
 <pre>
 class MyStack:
