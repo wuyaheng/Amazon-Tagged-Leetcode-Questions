@@ -242,6 +242,31 @@ class Solution:
       return nums
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/find-common-characters/" target="_blank">https://leetcode.com/problems/find-common-characters/</a></p>
+<pre>
+class Solution:
+  def commonChars(self, words: List[str]) -> List[str]:
+      lookup = {}
+      ans = []
+      
+      for c in words[0]:
+          lookup[c] = lookup.get(c, 0) + 1
+      
+      for k in lookup:
+          for word in words[1:]:
+              if k not in word:
+                  lookup[k] = 0
+              else:
+                  lookup[k] = min(word.count(k), lookup[k])
+                  
+      for k, v in lookup.items():
+          if v > 0:
+              for i in range(v):
+                  ans.append(k)
+      
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/squares-of-a-sorted-array/" target="_blank">https://leetcode.com/problems/squares-of-a-sorted-array/</a></p>
 <pre>
 class Solution:
