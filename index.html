@@ -757,6 +757,20 @@ class Solution:
       return x == y
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/excel-sheet-column-title/" target="_blank">https://leetcode.com/problems/excel-sheet-column-title/</a></p>
+<pre>
+class Solution:
+  def convertToTitle(self, columnNumber: int) -> str:
+      ans = ''
+      
+      while columnNumber > 0:
+          columnNumber -= 1
+          ans += chr(columnNumber % 26 + 65)
+          columnNumber = columnNumber // 26
+          
+      return ans[::-1]
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/number-of-days-between-two-dates/" target="_blank">https://leetcode.com/problems/number-of-days-between-two-dates/</a></p>
 <pre>
 class Solution:
