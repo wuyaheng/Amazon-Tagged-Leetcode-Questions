@@ -255,9 +255,7 @@ class Solution:
 <pre>
 class Solution:
   def thirdMax(self, nums: List[int]) -> int:
-      Max1 = float("-inf")
-      Max2 = float("-inf")
-      Max3 = float("-inf")
+      Max1, Max2, Max3 = float("-inf"), float("-inf"), float("-inf")
       
       for num in nums:
           if num > Max1:
