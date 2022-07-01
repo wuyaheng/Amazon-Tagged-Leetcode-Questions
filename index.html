@@ -1510,6 +1510,34 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/binary-tree-postorder-traversal/" target="_blank">https://leetcode.com/problems/binary-tree-postorder-traversal/</a></p>
+<pre>
+class Solution:
+  def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+      ans = []
+      stack = [root]
+      
+      if root is None:
+          return ans
+      
+      while stack:
+          cur = stack.pop()
+          
+          if cur != None:
+              stack.append(cur)
+              stack.append(None)
+              
+              if (cur.right != None):
+                  stack.append(cur.right)
+                  
+              if (cur.left != None):
+                  stack.append(cur.left)
+          else:
+              ans.append(stack.pop().val)
+              
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/two-sum-iv-input-is-a-bst/" target="_blank">https://leetcode.com/problems/two-sum-iv-input-is-a-bst/</a></p>
 <pre>
 class Solution:
