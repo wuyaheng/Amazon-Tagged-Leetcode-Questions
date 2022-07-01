@@ -251,6 +251,28 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/third-maximum-number/" target="_blank">https://leetcode.com/problems/third-maximum-number/</a></p>
+<pre>
+class Solution:
+  def thirdMax(self, nums: List[int]) -> int:
+      Max1 = float("-inf")
+      Max2 = float("-inf")
+      Max3 = float("-inf")
+      
+      for num in nums:
+          if num > Max1:
+              Max3 = Max2
+              Max2 = Max1
+              Max1 = num
+          elif num < Max1 and num > Max2:
+              Max3 = Max2
+              Max2 = num
+          elif num < Max2 and num > Max3:
+              Max3 = num
+      
+      return Max3 if Max3 != float("-inf") else Max1
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/shortest-word-distance/" target="_blank">https://leetcode.com/problems/shortest-word-distance/</a></p>
 <pre>
 class Solution:
