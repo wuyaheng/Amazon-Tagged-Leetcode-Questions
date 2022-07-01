@@ -816,6 +816,22 @@ class Solution:
       return x == y
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/add-digits/" target="_blank">https://leetcode.com/problems/add-digits/</a></p>
+<pre>
+class Solution:
+  def addDigits(self, num: int) -> int:
+      while num > 9:
+          s = 0
+          
+          while num > 0:
+              s += num % 10
+              num //= 10
+              
+          num = s
+          
+      return num
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/excel-sheet-column-title/" target="_blank">https://leetcode.com/problems/excel-sheet-column-title/</a></p>
 <pre>
 class Solution:
