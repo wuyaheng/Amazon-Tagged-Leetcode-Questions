@@ -242,6 +242,22 @@ class Solution:
       return -1
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/longest-word-in-dictionary/" target="_blank">https://leetcode.com/problems/longest-word-in-dictionary/</a></p>
+<pre>
+class Solution:
+  def longestWord(self, words: List[str]) -> str:
+      lookup = set()
+      ans = ""
+      words.sort()
+      
+      for word in words:
+          if len(word) == 1 or word[:-1] in lookup:
+              ans = word if len(word) > len(ans) else ans
+              lookup.add(word)
+              
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/summary-ranges/" target="_blank">https://leetcode.com/problems/summary-ranges/</a></p>
 <pre>
 class Solution:
