@@ -862,6 +862,19 @@ class Solution:
       return x == y
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/greatest-common-divisor-of-strings/" target="_blank">https://leetcode.com/problems/greatest-common-divisor-of-strings/</a></p>
+<pre>
+class Solution:
+  def gcdOfStrings(self, str1: str, str2: str) -> str:      
+      if str1 + str2 != str2 + str1:
+          return ""
+      
+      def gcd(a, b):
+          return a if b == 0 else gcd(b, a % b)
+      
+      return str1[0: gcd(len(str1), len(str2))]
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/add-digits/" target="_blank">https://leetcode.com/problems/add-digits/</a></p>
 <pre>
 class Solution:
