@@ -662,6 +662,24 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/valid-perfect-square/" target="_blank">https://leetcode.com/problems/valid-perfect-square/</a></p>
+<pre>
+class Solution:
+  def isPerfectSquare(self, num: int) -> bool:        
+      l = 1
+      r = num
+      
+      while l < r:
+          mid = (l + r) // 2
+          
+          if mid * mid <= num:
+              l = mid + 1
+          else:
+              r = mid
+              
+      return True if l == 1 else (l - 1) * (l - 1) == num
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/search-insert-position/" target="_blank">https://leetcode.com/problems/search-insert-position/</a></p>
 <pre>
 class Solution:
