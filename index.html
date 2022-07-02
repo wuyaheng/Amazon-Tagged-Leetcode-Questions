@@ -223,6 +223,20 @@ class Solution:
       return k
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/" target="_blank">https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/</a></p>
+<pre>
+class Solution:
+  def replaceElements(self, arr: List[int]) -> List[int]:
+      maxN = -1
+      
+      for i in range(len(arr) - 1, -1, -1):
+          t = maxN
+          maxN = max(t, arr[i])
+          arr[i] = t
+          
+      return arr
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/build-array-from-permutation/" target="_blank">https://leetcode.com/problems/build-array-from-permutation/</a></p>
 <pre>
 class Solution:
