@@ -227,6 +227,21 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/find-pivot-index/" target="_blank">https://leetcode.com/problems/find-pivot-index/</a></p>
+<pre>
+class Solution:
+  def pivotIndex(self, nums: List[int]) -> int:
+      curSum = 0
+      total = sum(nums)
+      
+      for i in range(len(nums)):
+          if curSum == total - nums[i] - curSum:
+              return i
+          curSum += nums[i]
+          
+      return -1
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/summary-ranges/" target="_blank">https://leetcode.com/problems/summary-ranges/</a></p>
 <pre>
 class Solution:
