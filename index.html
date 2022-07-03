@@ -237,6 +237,20 @@ class Solution:
       return arr
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/can-place-flowers/" target="_blank">https://leetcode.com/problems/can-place-flowers/</a></p>
+<pre>
+class Solution:
+  def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
+      m = len(flowerbed)
+      
+      for i in range(m):
+          if n > 0 and flowerbed[i] == 0 and (i - 1 < 0 or flowerbed[i - 1] == 0) and (i + 1 >= m or flowerbed[i + 1] == 0):
+              flowerbed[i] = 1
+              n -= 1
+              
+      return n == 0
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/array-partition-i/" target="_blank">https://leetcode.com/problems/array-partition-i/</a></p>
 <pre>
 class Solution:
