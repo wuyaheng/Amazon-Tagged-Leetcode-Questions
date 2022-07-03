@@ -237,6 +237,21 @@ class Solution:
       return arr
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/valid-mountain-array/" target="_blank">https://leetcode.com/problems/valid-mountain-array/</a></p>
+<pre>
+class Solution:
+  def validMountainArray(self, arr: List[int]) -> bool:
+      l = 0
+      r = len(arr) - 1
+      
+      while l < r and arr[l] < arr[l + 1]:
+              l += 1
+      while l < r and arr[r - 1] > arr[r]:
+              r -= 1
+      
+      return l == r and l != 0 and l != len(arr) - 1
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/can-place-flowers/" target="_blank">https://leetcode.com/problems/can-place-flowers/</a></p>
 <pre>
 class Solution:
