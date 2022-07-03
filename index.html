@@ -237,6 +237,19 @@ class Solution:
       return arr
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/array-partition-i/" target="_blank">https://leetcode.com/problems/array-partition-i/</a></p>
+<pre>
+class Solution:
+  def arrayPairSum(self, nums: List[int]) -> int:
+      ans = 0
+      arr = sorted(nums)
+      
+      for i in range(0, len(arr), 2):
+          ans += arr[i]
+          
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/build-array-from-permutation/" target="_blank">https://leetcode.com/problems/build-array-from-permutation/</a></p>
 <pre>
 class Solution:
