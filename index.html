@@ -212,6 +212,15 @@ class Solution:
       return ans + 1 if ans < len(s) else ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/repeated-substring-pattern/" target="_blank">https://leetcode.com/problems/repeated-substring-pattern/</a></p>
+<pre>
+class Solution:
+  def repeatedSubstringPattern(self, s: str) -> bool:
+      l = s[1:] + s[:-1]
+      
+      return s in l
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/kth-missing-positive-number/" target="_blank">https://leetcode.com/problems/kth-missing-positive-number/</a></p>
 <pre>
 class Solution:
