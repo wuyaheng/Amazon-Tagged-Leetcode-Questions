@@ -212,6 +212,31 @@ class Solution:
       return ans + 1 if ans < len(s) else ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/" target="_blank">https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/</a></p>
+<pre>
+class Solution:
+  def countCharacters(self, words: List[str], chars: str) -> int:
+      ans = 0
+      
+      for word in words:
+          d = {}
+          
+          for c in chars:
+              d[c] = d.get(c, 0) + 1
+              
+          t = 0
+          for w in word:
+              if w in d and d[w] > 0:
+                  d[w] -= 1
+                  t += 1
+              else:
+                  t = 0
+                  break
+          ans += t
+      
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/repeated-substring-pattern/" target="_blank">https://leetcode.com/problems/repeated-substring-pattern/</a></p>
 <pre>
 class Solution:
