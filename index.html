@@ -212,6 +212,28 @@ class Solution:
       return ans + 1 if ans < len(s) else ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/assign-cookies/" target="_blank">https://leetcode.com/problems/assign-cookies/</a></p>
+<pre>
+class Solution:
+  def findContentChildren(self, g: List[int], s: List[int]) -> int:
+      g.sort()
+      s.sort()
+      
+      ans = 0
+      i = 0
+      j = 0
+      
+      while i < len(g) and j < len(s):
+          if s[j] >= g[i]:
+              ans += 1
+              i += 1
+              j += 1
+          else:
+              j += 1
+              
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/sort-array-by-parity-ii/" target="_blank">https://leetcode.com/problems/sort-array-by-parity-ii/</a></p>
 <pre>
 class Solution:
