@@ -212,6 +212,28 @@ class Solution:
       return ans + 1 if ans < len(s) else ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/sort-array-by-parity-ii/" target="_blank">https://leetcode.com/problems/sort-array-by-parity-ii/</a></p>
+<pre>
+class Solution:
+  def sortArrayByParityII(self, nums: List[int]) -> List[int]:
+      n = len(nums)
+      ans = [0] * n
+      
+      t = 0
+      for num in nums:
+          if num % 2 == 0:
+              ans[t] = num
+              t += 2
+              
+      t = 1       
+      for num in nums:
+          if num % 2 != 0:
+              ans[t] = num
+              t += 2
+              
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/" target="_blank">https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/</a></p>
 <pre>
 class Solution:
