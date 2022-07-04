@@ -2207,6 +2207,28 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/" target="_blank">https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/</a></p>
+<pre>
+class Solution:
+  def countNegatives(self, grid: List[List[int]]) -> int:
+      ans = 0
+      
+      m = len(grid)
+      n = len(grid[0])
+      
+      i = m - 1
+      j = 0
+      
+      while i >=0 and j < n:
+          if grid[i][j] >= 0:
+              ans += i + 1
+              j += 1
+          else:
+              i -= 1
+              
+      return m * n - ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/flood-fill/" target="_blank">https://leetcode.com/problems/flood-fill/</a></p>
 <pre>
 class Solution:
