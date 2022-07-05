@@ -2358,6 +2358,31 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/flipping-an-image/" target="_blank">https://leetcode.com/problems/flipping-an-image/</a></p>
+<pre>
+class Solution:
+  def flipAndInvertImage(self, image: List[List[int]]) -> List[List[int]]:
+      m = len(image)
+      n = len(image[0])
+      
+      for i in range(m):
+          l = 0
+          r = n - 1
+          while l <= r:
+              t = image[i][l]
+              image[i][l] = image[i][r]
+              image[i][r] = t
+              
+              image[i][l] = 1 - image[i][l]
+              if l != r:      
+                  image[i][r] = 1 - image[i][r]
+                  
+              l += 1
+              r -= 1
+              
+      return image
+</pre>
+
 <p class="text-center text-muted">https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/<a href="" target="_blank">https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/</a></p>
 <pre>
 class Solution:
