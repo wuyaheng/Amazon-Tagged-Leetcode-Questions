@@ -2307,6 +2307,30 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted">https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/<a href="" target="_blank">https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/</a></p>
+<pre>
+class Solution:
+  def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
+      m = len(mat)
+      n = len(mat[0])
+      ans = []
+      l = []
+      
+      for i in range(m):
+          cnt = 0
+          for j in range(n):
+              if mat[i][j] == 1:
+                  cnt += 1
+          l.append([cnt, i])
+            
+      l = sorted(sorted(l, key = lambda x: x[1]), key = lambda x: x[0])
+      
+      for i in range(k):
+          ans.append(l[i][1])
+          
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/" target="_blank">https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/</a></p>
 <pre>
 class Solution:
