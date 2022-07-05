@@ -862,6 +862,24 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/find-smallest-letter-greater-than-target/" target="_blank">https://leetcode.com/problems/find-smallest-letter-greater-than-target/</a></p>
+<pre>
+class Solution:
+  def nextGreatestLetter(self, letters: List[str], target: str) -> str:
+      l = 0
+      r = len(letters)
+      
+      while l < r:
+          mid = (l + r)//2
+          
+          if letters[mid] <= target:
+              l = mid + 1
+          else:
+              r = mid
+              
+      return letters[0 if l == len(letters) else l]
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/arranging-coins/" target="_blank">https://leetcode.com/problems/arranging-coins/</a></p>
 <pre>
 class Solution:
