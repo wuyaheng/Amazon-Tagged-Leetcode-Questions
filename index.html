@@ -1072,6 +1072,18 @@ class Solution:
       return n % 2 == 0
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/" target="_blank">https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/</a></p>
+<pre>
+class Solution:
+  def countOdds(self, low: int, high: int) -> int:
+      ans = (high - low + 1) // 2
+      
+      if high % 2 == 1 and low % 2 == 1:
+          ans += 1
+          
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/minimum-time-visiting-all-points/" target="_blank">https://leetcode.com/problems/minimum-time-visiting-all-points/</a></p>
 <pre>
 class Solution:
