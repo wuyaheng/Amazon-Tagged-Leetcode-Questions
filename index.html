@@ -1132,8 +1132,21 @@ class Solution:
   def isPowerOfThree(self, n: int) -> bool:
       if n == 1:
           return True
+
       if n % 3 == 0 and n != 0:
           return self.isPowerOfThree(n / 3)
+      return False
+</pre>
+
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/power-of-four/" target="_blank">https://leetcode.com/problems/power-of-four/</a></p>
+<pre>
+class Solution:
+  def isPowerOfFour(self, n: int) -> bool:
+      if n == 1:
+          return True
+      
+      if n % 4 == 0 and n != 0:
+          return self.isPowerOfFour(n / 4)
       return False
 </pre>
 
