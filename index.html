@@ -1126,6 +1126,17 @@ class Solution:
       return n % 2 == 0
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/power-of-three/" target="_blank">https://leetcode.com/problems/power-of-three/</a></p>
+<pre>
+class Solution:
+  def isPowerOfThree(self, n: int) -> bool:
+      if n == 1:
+          return True
+      if n % 3 == 0 and n != 0:
+          return self.isPowerOfThree(n / 3)
+      return False
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/perfect-number/" target="_blank">https://leetcode.com/problems/perfect-number/</a></p>
 <pre>
 class Solution:
