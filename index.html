@@ -1126,6 +1126,19 @@ class Solution:
       return n % 2 == 0
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/minimum-moves-to-equal-array-elements/" target="_blank">https://leetcode.com/problems/minimum-moves-to-equal-array-elements/</a></p>
+<pre>
+class Solution:
+  def minMoves(self, nums: List[int]) -> int:
+      m = min(nums)
+      
+      ans = 0
+      for num in nums:
+          ans += num - m
+          
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/" target="_blank">https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/</a></p>
 <pre>
 class Solution:
