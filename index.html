@@ -1126,6 +1126,27 @@ class Solution:
       return n % 2 == 0
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/fair-candy-swap/" target="_blank">https://leetcode.com/problems/fair-candy-swap/</a></p>
+<pre>
+class Solution:
+  def fairCandySwap(self, aliceSizes: List[int], bobSizes: List[int]) -> List[int]:
+      a = 0
+      b = 0
+      
+      s = set()
+      
+      for x in aliceSizes:
+          a += x
+      
+      for x in bobSizes:
+          b += x
+          s.add(x)
+          
+      for x in aliceSizes:
+          if (b - a)/2 + x in s:
+              return [x, (b - a) // 2 + x]
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/ugly-number/" target="_blank">https://leetcode.com/problems/ugly-number/</a></p>
 <pre>
 class Solution:
