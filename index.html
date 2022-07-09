@@ -1196,6 +1196,28 @@ class Solution:
       return n % 2 == 0
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/sum-of-all-odd-length-subarrays/" target="_blank">https://leetcode.com/problems/sum-of-all-odd-length-subarrays/</a></p>
+<pre>
+class Solution:
+  def sumOddLengthSubarrays(self, arr: List[int]) -> int:
+      n = len(arr)
+      ans = 0
+      
+      for i in range(n):
+          lcnt = i
+          rcnt = n - i - 1
+          
+          lOdd = (lcnt + 1) // 2
+          rOdd = (rcnt + 1) // 2
+          
+          lEven = lcnt // 2 + 1
+          rEven = rcnt // 2 + 1
+          
+          ans += arr[i] * (lOdd * rOdd + lEven * rEven)
+          
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/fair-candy-swap/" target="_blank">https://leetcode.com/problems/fair-candy-swap/</a></p>
 <pre>
 class Solution:
