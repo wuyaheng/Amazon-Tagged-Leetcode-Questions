@@ -212,6 +212,24 @@ class Solution:
       return ans + 1 if ans < len(s) else ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/count-good-triplets/" target="_blank">https://leetcode.com/problems/count-good-triplets/</a></p>
+<pre>
+class Solution:
+  def countGoodTriplets(self, arr: List[int], a: int, b: int, c: int) -> int:
+      ans = 0
+      n = len(arr)
+      for i in range(n):
+          for j in range(i + 1, n):
+              if abs(arr[i] - arr[j]) > a:
+                  continue
+              for k in range(j + 1, n):
+                  if abs(arr[j] - arr[k]) > b or abs(arr[i] - arr[k]) > c:
+                      continue
+                  ans += 1
+                      
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/" target="_blank">https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/</a></p>
 <pre>
 class Solution:
