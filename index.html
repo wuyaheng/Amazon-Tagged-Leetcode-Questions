@@ -1216,6 +1216,27 @@ class Solution:
       return n % 4 != 0
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/self-dividing-numbers/" target="_blank">https://leetcode.com/problems/self-dividing-numbers/</a></p>
+<pre>
+class Solution:
+  def selfDividingNumbers(self, left: int, right: int) -> List[int]: 
+      def helper(num):
+          i = num
+          
+          while i:
+              rem = i % 10
+              if not rem:
+                  return False
+              if num % rem != 0:
+                  return False
+              
+              i = i // 10
+              
+          return True
+      
+      return [i for i in range(left, right + 1) if helper(i)]
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/sum-of-all-odd-length-subarrays/" target="_blank">https://leetcode.com/problems/sum-of-all-odd-length-subarrays/</a></p>
 <pre>
 class Solution:
