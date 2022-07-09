@@ -2686,6 +2686,17 @@ class Solution:
       g = {}
       vis = set()
       
+      for e in edges:
+          if e[0] in g:
+              g[e[0]].append(e[1])
+          else:
+              g[e[0]] = [e[1]]
+              
+          if e[1] in g:
+              g[e[1]].append(e[0])
+          else:
+              g[e[1]] = [e[0]]
+      
       def dfs(u, d):
           if u == d:
               return True
@@ -2698,18 +2709,7 @@ class Solution:
               if dfs(v, d):
                   return True
           return False
-      
-      for e in edges:
-          if e[0] in g:
-              g[e[0]].append(e[1])
-          else:
-              g[e[0]] = [e[1]]
-              
-          if e[1] in g:
-              g[e[1]].append(e[0])
-          else:
-              g[e[1]] = [e[0]]
-          
+  
       return dfs(source, destination)
 </pre>
 
