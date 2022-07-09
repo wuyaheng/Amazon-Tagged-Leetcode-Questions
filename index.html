@@ -230,6 +230,23 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/" target="_blank">https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/</a></p>
+<pre>
+class Solution:
+  def maxProduct(self, nums: List[int]) -> int:
+      max1 = 0
+      max2 = 0
+      
+      for num in nums:
+          if num >= max1:
+              max2 = max1
+              max1 = num
+          elif num < max1 and num > max2:
+              max2 = num
+              
+      return (max1 - 1) * (max2 - 1)
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/" target="_blank">https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/</a></p>
 <pre>
 class Solution:
@@ -1078,6 +1095,27 @@ class Solution:
           i += 1
           j -= 1
       return True
+</pre>
+
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/di-string-match/" target="_blank">https://leetcode.com/problems/di-string-match/</a></p>
+<pre>
+class Solution:
+  def diStringMatch(self, s: str) -> List[int]:
+      n = len(s)
+      l = 0
+      r = n
+      ans = [0] * (n + 1)
+      
+      for i in range(n):
+          if s[i] == 'I':
+              ans[i] = l
+              l += 1
+          else:
+              ans[i] = r
+              r -= 1
+      ans[n] = l    
+      
+      return ans
 </pre>
 
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/duplicate-zeros/" target="_blank">https://leetcode.com/problems/duplicate-zeros/</a></p>
