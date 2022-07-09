@@ -1049,6 +1049,27 @@ class Solution:
       return True
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/duplicate-zeros/" target="_blank">https://leetcode.com/problems/duplicate-zeros/</a></p>
+<pre>
+class Solution:
+  def duplicateZeros(self, arr: List[int]) -> None:
+      n = len(arr)
+      
+      l = 0
+      r = 0
+      while l < n and r < n:
+          arr[l] += 10 * (arr[r] % 10)
+          if arr[r] % 10 == 0:
+              l += 1
+          l += 1
+          r += 1
+          
+      for i in range(n):
+          arr[i] //= 10
+          
+      return arr
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/remove-element/" target="_blank">https://leetcode.com/problems/remove-element/</a></p>
 <pre>
 class Solution:
