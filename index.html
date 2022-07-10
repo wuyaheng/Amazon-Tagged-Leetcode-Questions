@@ -2711,6 +2711,26 @@ class KthLargest:
       return self.pq[0]
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/" target="_blank">https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/</a></p>
+<pre>
+class Solution:
+  def largestSumAfterKNegations(self, nums: List[int], k: int) -> int:
+      pq = []
+      ans = 0
+      
+      for x in nums:
+          heapq.heappush(pq, x)
+          
+      while k > 0:
+          heapq.heappush(pq, -heapq.heappop(pq))
+          k -= 1
+          
+      while len(pq) > 0:
+          ans += heapq.heappop(pq)
+          
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/last-stone-weight/" target="_blank">https://leetcode.com/problems/last-stone-weight/</a></p>
 <pre>
 class Solution:
