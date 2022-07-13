@@ -2805,6 +2805,41 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/toeplitz-matrix/" target="_blank">https://leetcode.com/problems/toeplitz-matrix/</a></p>
+<pre>
+class Solution:
+  def isToeplitzMatrix(self, matrix: List[List[int]]) -> bool:
+      for i in range(len(matrix)):
+          for j in range(len(matrix[0])):
+              if i > 0 and j > 0 and matrix[i][j] != matrix[i - 1][j - 1]:
+                  return False
+      return True
+</pre>
+
+<pre>
+class Solution:
+  def isToeplitzMatrix(self, matrix: List[List[int]]) -> bool:        
+      m = len(matrix)
+      n = len(matrix[0])
+      
+      '''
+          the indicies of top-left bottom-right diagonals are r-c
+                          top-right bottom-left diagonals are r+c
+      '''
+      lookup = {}
+
+      for r in range(m):
+          for c in range(n):
+              diag_idx = r - c
+              if diag_idx in lookup:
+                  if lookup[diag_idx] != matrix[r][c]:
+                      return False
+              else:
+                  lookup[diag_idx] = matrix[r][c]
+              
+      return True
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/flipping-an-image/" target="_blank">https://leetcode.com/problems/flipping-an-image/</a></p>
 <pre>
 class Solution:
