@@ -231,6 +231,24 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/longest-harmonious-subsequence/" target="_blank">https://leetcode.com/problems/longest-harmonious-subsequence/</a></p>
+<pre>
+class Solution:
+  def findLHS(self, nums: List[int]) -> int:
+      d = {}
+      
+      for num in nums:
+          d[num] = d.get(num, 0) + 1
+          
+      maxN = 0
+      
+      for k in d.keys():
+          if k + 1 in d:
+              maxN = max(maxN, d[k] + d[k + 1])
+              
+      return maxN
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/count-good-triplets/" target="_blank">https://leetcode.com/problems/count-good-triplets/</a></p>
 <pre>
 class Solution:
