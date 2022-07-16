@@ -212,6 +212,25 @@ class Solution:
       return ans + 1 if ans < len(s) else ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/number-of-equivalent-domino-pairs/" target="_blank">https://leetcode.com/problems/number-of-equivalent-domino-pairs/</a></p>
+<pre>
+class Solution:
+  def numEquivDominoPairs(self, dominoes: List[List[int]]) -> int:
+      ans = 0
+      d = {}
+      
+      for x in dominoes:
+          if (x[0], x[1]) in d: 
+              ans += d[(x[0], x[1])]
+              
+          if x[0] != x[1] and (x[1], x[0]) in d:
+              ans += d[(x[1], x[0])]
+              
+          d[(x[0], x[1])] = d.get((x[0], x[1]), 0) + 1
+      
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/count-good-triplets/" target="_blank">https://leetcode.com/problems/count-good-triplets/</a></p>
 <pre>
 class Solution:
