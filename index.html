@@ -2861,6 +2861,33 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/cells-with-odd-values-in-a-matrix/" target="_blank">https://leetcode.com/problems/cells-with-odd-values-in-a-matrix/</a></p>
+<pre>
+class Solution:
+  def oddCells(self, m: int, n: int, indices: List[List[int]]) -> int:
+      a = [0] * m
+      b = [0] * n
+      
+      for i in indices:
+          a[i[0]] += 1
+          b[i[1]] += 1
+       
+      aOdd = 0
+      aEven = 0
+      
+      for x in a:
+          if x % 2 == 0:
+              aEven += 1
+          else:
+              aOdd += 1
+              
+      ans = 0
+      for x in b:
+          ans += aOdd if x % 2 == 0 else aEven
+          
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/toeplitz-matrix/" target="_blank">https://leetcode.com/problems/toeplitz-matrix/</a></p>
 <pre>
 class Solution:
