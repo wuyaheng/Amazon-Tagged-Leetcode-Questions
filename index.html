@@ -2898,6 +2898,29 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/reshape-the-matrix/" target="_blank">https://leetcode.com/problems/reshape-the-matrix/</a></p>
+<pre>
+class Solution:
+  def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+      if r * c != len(mat) * len(mat[0]):
+          return mat
+      
+      ans = [[0 for j in range(c)] for i in range(r)]
+      
+      i = 0
+      j = 0
+      
+      for x in mat:
+          for e in x:
+              ans[i][j] = e
+              j += 1
+              if j == c:
+                  j = 0
+                  i += 1
+                  
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/cells-with-odd-values-in-a-matrix/" target="_blank">https://leetcode.com/problems/cells-with-odd-values-in-a-matrix/</a></p>
 <pre>
 class Solution:
