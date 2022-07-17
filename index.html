@@ -2203,6 +2203,27 @@ class Solution:
       return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/construct-string-from-binary-tree/" target="_blank">https://leetcode.com/problems/construct-string-from-binary-tree/</a></p>
+<pre>
+class Solution:
+  def tree2str(self, root: Optional[TreeNode]) -> str:
+      ans = ""
+      
+      if root == None:
+          return ans
+          
+      ans += str(root.val)
+      if root.left == None and root.right == None:
+          return ans
+      
+      ans += '(' + self.tree2str(root.left) + ')'
+      
+      if root.right != None:
+          ans += '(' + self.tree2str(root.right) + ')'
+          
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/" target="_blank">https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/</a></p>
 <pre>
 class Solution:
