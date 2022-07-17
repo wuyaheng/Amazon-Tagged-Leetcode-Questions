@@ -1882,6 +1882,22 @@ class Solution:
       return len(stack) == 0
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/" target="_blank">https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/</a></p>
+<pre>
+class Solution:
+  def finalPrices(self, prices: List[int]) -> List[int]:
+      stack = []
+
+      for i in range(len(prices)):
+          while len(stack) > 0 and prices[stack[-1]] >= prices[i]:
+              k = stack.pop()
+              prices[k] = prices[k] - prices[i]
+          
+          stack.append(i)
+          
+      return prices
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/backspace-string-compare/" target="_blank">https://leetcode.com/problems/backspace-string-compare/</a></p>
 <pre>
 class Solution:
