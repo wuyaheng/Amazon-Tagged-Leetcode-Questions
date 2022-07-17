@@ -1685,6 +1685,13 @@ class Solution:
       return t    
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/" target="_blank">https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/</a></p>
+<pre>
+class Solution:
+  def sortByBits(self, arr: List[int]) -> List[int]:
+      return sorted(arr, key = lambda x: (bin(x).count('1'), x))
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/find-the-difference/" target="_blank">https://leetcode.com/problems/find-the-difference/</a></p>
 <pre>
 class Solution:
