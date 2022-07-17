@@ -212,6 +212,27 @@ class Solution:
       return ans + 1 if ans < len(s) else ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/minimum-subsequence-in-non-increasing-order/" target="_blank">https://leetcode.com/problems/minimum-subsequence-in-non-increasing-order/</a></p>
+<pre>
+class Solution:
+  def minSubsequence(self, nums: List[int]) -> List[int]:
+      ans = []
+      t = sum(nums)
+      curSum = 0
+      
+      nums.sort()
+      
+      for i in range(len(nums) - 1, -1, -1):
+          curSum += nums[i]
+          
+          if curSum > t - curSum:
+              for j in range(len(nums) - 1, i - 1, -1):
+                  ans.append(nums[j])
+              return ans
+          
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/number-of-equivalent-domino-pairs/" target="_blank">https://leetcode.com/problems/number-of-equivalent-domino-pairs/</a></p>
 <pre>
 class Solution:
