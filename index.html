@@ -2036,6 +2036,24 @@ class MinStack:
 </pre>
 
 <hr>
+<h6>&bull; Greedy</h6>
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/minimum-cost-to-move-chips-to-the-same-position/" target="_blank">https://leetcode.com/problems/minimum-cost-to-move-chips-to-the-same-position/</a></p>
+<pre>
+class Solution:
+  def minCostToMoveChips(self, position: List[int]) -> int:
+      odd = 0
+      even = 0
+      
+      for x in position:
+          if x % 2 == 0:
+              even += 1
+          else:
+              odd += 1
+              
+      return min(even, odd)
+</pre>
+
+<hr>
 <h6>&bull; Linked List</h6>
 
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/reverse-linked-list/" target="_blank">https://leetcode.com/problems/reverse-linked-list/</a></p>
