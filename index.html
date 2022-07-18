@@ -212,6 +212,18 @@ class Solution:
       return ans + 1 if ans < len(s) else ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/distribute-candies/" target="_blank">https://leetcode.com/problems/distribute-candies/</a></p>
+<pre>
+class Solution:
+  def distributeCandies(self, candyType: List[int]) -> int:
+      s = set()
+      
+      for x in candyType:
+          s.add(x)
+              
+      return min(len(s), len(candyType) // 2)
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/minimum-subsequence-in-non-increasing-order/" target="_blank">https://leetcode.com/problems/minimum-subsequence-in-non-increasing-order/</a></p>
 <pre>
 class Solution:
