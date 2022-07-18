@@ -1316,6 +1316,27 @@ class Solution:
 <hr>
 <h6>&bull; Math</h6>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/x-of-a-kind-in-a-deck-of-cards/" target="_blank">https://leetcode.com/problems/x-of-a-kind-in-a-deck-of-cards/</a></p>
+<pre>
+class Solution:
+  def hasGroupsSizeX(self, deck: List[int]) -> bool:
+      def gcd(a, b):
+          return a if b == 0 else gcd(b, a % b)
+      
+      d = {}
+      pre = -1
+      for x in deck:
+          d[x] = d.get(x, 0) + 1
+      
+      for k in d:
+          if d[k] < 2:
+              return False
+          if pre != -1 and gcd(d[k], pre) == 1:
+              return False
+          pre = d[k]
+      return True
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/divisor-game/" target="_blank">https://leetcode.com/problems/divisor-game/</a></p>
 <pre>
 class Solution:
