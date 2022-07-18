@@ -1727,6 +1727,26 @@ class Solution:
       return t    
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/prime-number-of-set-bits-in-binary-representation/" target="_blank">https://leetcode.com/problems/prime-number-of-set-bits-in-binary-representation/</a></p>
+<pre>
+class Solution:
+  def countPrimeSetBits(self, left: int, right: int) -> int:
+      prime = [0] * 35
+      prime[1] = 1
+      
+      for i in range(2, 32):
+          if prime[i] == 0:
+              for j in range(i + i, 33, i):
+                  prime[j] = 1
+      
+      cnt = 0
+      for i in range(left, right + 1):
+          if prime[bin(i).count('1')] == 0:
+              cnt += 1
+              
+      return cnt
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/" target="_blank">https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/</a></p>
 <pre>
 class Solution:
