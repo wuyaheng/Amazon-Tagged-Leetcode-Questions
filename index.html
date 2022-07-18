@@ -2094,6 +2094,22 @@ class Solution:
       return min(even, odd)
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/largest-perimeter-triangle/" target="_blank">https://leetcode.com/problems/largest-perimeter-triangle/</a></p>
+<pre>
+class Solution:
+  def largestPerimeter(self, nums: List[int]) -> int:
+      nums.sort()
+      
+      for i in range(len(nums) - 1, 1, -1):
+          a = nums[i]
+          b = nums[i - 1]
+          c = nums[i - 2]
+          
+          if b + c > a:
+              return a + b + c
+      return 0
+</pre>
+
 <hr>
 <h6>&bull; Linked List</h6>
 
