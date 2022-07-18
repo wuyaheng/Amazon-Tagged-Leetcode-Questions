@@ -3050,6 +3050,31 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/projection-area-of-3d-shapes/" target="_blank">https://leetcode.com/problems/projection-area-of-3d-shapes/</a></p>
+<pre>
+class Solution:
+  def projectionArea(self, grid: List[List[int]]) -> int:
+      curSum = 0
+      m = len(grid)
+      n = len(grid[0])
+      
+      for i in range(m):
+          maxN = 0
+          for j in range(n):
+              maxN = max(maxN, grid[i][j])
+              if grid[i][j] == 0:
+                  curSum -= 1
+          curSum += maxN
+          
+      for i in range(n):
+          maxN = 0
+          for j in range(m):
+              maxN = max(maxN, grid[j][i])
+          curSum += maxN
+          
+      return m * n + curSum
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/reshape-the-matrix/" target="_blank">https://leetcode.com/problems/reshape-the-matrix/</a></p>
 <pre>
 class Solution:
