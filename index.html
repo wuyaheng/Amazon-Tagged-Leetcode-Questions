@@ -1167,6 +1167,33 @@ class Solution:
       return True
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/long-pressed-name/" target="_blank">https://leetcode.com/problems/long-pressed-name/</a></p>
+<pre>
+class Solution:
+  def isLongPressedName(self, name: str, typed: str) -> bool:
+      i = 0
+      j = 0
+      n = len(name)
+      m = len(typed)
+      prei = 0
+      prej = 0
+      
+      while i < n and j < m:
+          if name[prei] != typed[prej]:
+              return False
+          while i < n and name[i] == name[prei]:
+              i += 1
+          while j < m and typed[j] == typed[prej]:
+              j += 1
+              
+          if j - prej < i - prei:
+              return False
+          prei = i
+          prej = j
+          
+      return i == n and j == m
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/di-string-match/" target="_blank">https://leetcode.com/problems/di-string-match/</a></p>
 <pre>
 class Solution:
