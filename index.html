@@ -1798,6 +1798,20 @@ class Solution:
       return t    
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/binary-watch/" target="_blank">https://leetcode.com/problems/binary-watch/</a></p>
+<pre>
+class Solution:
+  def readBinaryWatch(self, turnedOn: int) -> List[str]:
+      ans = []
+      
+      for i in range(12):
+          for j in range(60):
+              if (bin(i) + bin(j)).count('1') == turnedOn:
+                  ans.append(str(i) + ':' + ('0' if j < 10 else '') + str(j))
+                  
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/number-complement/" target="_blank">https://leetcode.com/problems/number-complement/</a></p>
 <pre>
 class Solution:
