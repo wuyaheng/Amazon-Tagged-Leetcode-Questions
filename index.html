@@ -1319,6 +1319,28 @@ class Solution:
       return R == L and U == D
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/increasing-decreasing-string/" target="_blank">https://leetcode.com/problems/increasing-decreasing-string/</a></p>
+<pre>
+class Solution:
+  def sortString(self, s: str) -> str:
+      arr = [0] * 26
+      ans = ''
+      for c in s:
+          arr[ord(c) - 97] += 1
+      
+      while len(ans) < len(s):
+          for i in range(0, 26):
+              if arr[i] > 0:
+                  ans += chr(i + 97)
+                  arr[i] -= 1
+          for i in range(25, -1, -1):
+              if arr[i] > 0:
+                  ans += chr(i + 97)
+                  arr[i] -= 1
+                  
+      return ans
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/to-lower-case/" target="_blank">https://leetcode.com/problems/to-lower-case/</a></p>
 <pre>
 class Solution:
