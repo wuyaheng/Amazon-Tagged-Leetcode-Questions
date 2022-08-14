@@ -3211,6 +3211,25 @@ class Solution:
       return ans
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/surface-area-of-3d-shapes/" target="_blank">https://leetcode.com/problems/surface-area-of-3d-shapes/</a></p>
+<pre>
+class Solution:
+  def surfaceArea(self, grid: List[List[int]]) -> int:
+      curSum = 0
+      m, n = len(grid), len(grid[0])
+      
+      for i in range(m):
+          for j in range(n):
+              curSum += max(grid[i][j] - (grid[i - 1][j] if i > 0 else 0), 0)
+              curSum += max(grid[i][j] - (grid[i][j - 1] if j > 0 else 0), 0)
+              curSum += max(grid[i][j] - (grid[i + 1][j] if i < m - 1 else 0), 0)
+              curSum += max(grid[i][j] - (grid[i][j + 1] if j < n - 1 else 0), 0)
+              if grid[i][j] == 0:
+                  curSum -= 2
+                  
+      return m * n * 2 + curSum
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/image-smoother/" target="_blank">https://leetcode.com/problems/image-smoother/</a></p>
 <pre>
 class Solution:
