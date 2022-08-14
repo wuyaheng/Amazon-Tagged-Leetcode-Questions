@@ -1419,6 +1419,19 @@ class Solution:
       return True
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/range-addition-ii/" target="_blank">https://leetcode.com/problems/range-addition-ii/</a></p>
+<pre>
+class Solution:
+  def maxCount(self, m: int, n: int, ops: List[List[int]]) -> int:
+      r, c = m, n
+      
+      for op in ops:
+          r = min(r, op[0])
+          c = min(c, op[1])
+          
+      return r * c
+</pre>
+
 <p class="text-center text-muted"><a href="https://leetcode.com/problems/water-bottles/" target="_blank">https://leetcode.com/problems/water-bottles/</a></p>
 <pre>
 class Solution:
