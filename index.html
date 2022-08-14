@@ -1374,6 +1374,27 @@ class Solution:
       return False  
 </pre>
 
+<p class="text-center text-muted"><a href="https://leetcode.com/problems/diet-plan-performance/" target="_blank">https://leetcode.com/problems/diet-plan-performance/</a></p>
+<pre>
+class Solution:
+  def dietPlanPerformance(self, calories: List[int], k: int, lower: int, upper: int) -> int:
+      points = 0
+      running_calories = 0
+      
+      for i in range(len(calories)):
+          running_calories += calories[i]
+          
+          if i >= k - 1:
+              if running_calories < lower:
+                  points -= 1
+              elif running_calories > upper:
+                  points += 1
+                  
+              running_calories -= calories[i - k + 1]
+       
+      return points
+</pre>
+
 <hr>
 <h6>&bull; Math</h6>
 
